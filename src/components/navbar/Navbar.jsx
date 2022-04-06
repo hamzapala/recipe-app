@@ -8,7 +8,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-md navbar-dark bg-dark">
         <div className="container">
           <Link to="/"  className="navbar-brand">
-            Recep/Shaban/Ramazan
+            Hamza's Special RECIPES
           </Link>
 
           <div>

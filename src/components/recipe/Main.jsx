@@ -1,7 +1,7 @@
 import {useState} from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import RecipeCard from "../recipe/RecipeCard";
+import home from "../../assets/home.svg"
 
 
 const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
@@ -12,12 +12,7 @@ const Main = () => {
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
   const [meal, setMeal] = useState(mealTypes[0].toLowerCase());
-  
-// let navigate=useNavigate();
-    // const moreClick=()=>{
-    //     navigate("/details",{state:{recipes}})}
 
-  
   const handleChange = (e) =>{
     setQuery(() => e.target.value);
 }
@@ -38,7 +33,9 @@ console.log(query);
 
 
   return (
-    <div style={{ marginTop: "5rem" }}>
+    <div
+      style={{ paddingTop: "5rem", backgroundColor: "cyan", height: "100vh" }}
+    >
       <input
         defaultValue={query}
         onChange={handleChange}
@@ -56,7 +53,13 @@ console.log(query);
         <option defaultValue="snack">Snack</option>
         <option defaultValue="teatime">Teatime</option>
       </select>
-      <div className="d-flex flex-wrap">
+      <div>
+        <img style={{ width: "500px" }} src={home} alt="" />
+      </div>
+      <div
+        className="d-flex flex-wrap"
+        style={{overflow:"auto",backgroundColor: "cyan", height: "100vh" }}
+      >
         {recipes.map((recipe, index) => (
           <>
             <RecipeCard {...recipe} key={index} width={"200px"} />
